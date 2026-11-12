@@ -110,11 +110,14 @@ section h3 {
 }
 
 .unregister-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   flex: 0 0 auto;
   padding: 4px 8px;
   color: #c62828;
   background: transparent;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .unregister-button:hover {

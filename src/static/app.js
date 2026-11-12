@@ -55,12 +55,36 @@ document.addEventListener("DOMContentLoaded", () => {
             const unregisterButton = document.createElement("button");
             unregisterButton.type = "button";
             unregisterButton.className = "unregister-button";
-            unregisterButton.textContent = "🗑️";
             unregisterButton.setAttribute(
               "aria-label",
               `Unregister ${participant} from ${name}`
             );
             unregisterButton.title = `Unregister ${participant}`;
+            const deleteIcon = document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "svg"
+            );
+            deleteIcon.setAttribute("viewBox", "0 0 24 24");
+            deleteIcon.setAttribute("width", "16");
+            deleteIcon.setAttribute("height", "16");
+            deleteIcon.setAttribute("aria-hidden", "true");
+            const deleteIconPath = document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "path"
+            );
+            deleteIconPath.setAttribute(
+              "d",
+              "M3 6h18M8 6V4h8v2m-11 0 1 14h12l1-14M10 11v5m4-5v5"
+            );
+            deleteIconPath.setAttribute("fill", "none");
+            deleteIconPath.setAttribute("stroke", "currentColor");
+            deleteIconPath.setAttribute("stroke-linecap", "round");
+            deleteIconPath.setAttribute("stroke-linejoin", "round");
+            deleteIconPath.setAttribute("stroke-width", "2");
+            deleteIcon.appendChild(deleteIconPath);
+            const unregisterLabel = document.createElement("span");
+            unregisterLabel.textContent = "Unregister";
+            unregisterButton.append(deleteIcon, unregisterLabel);
             unregisterButton.addEventListener("click", async () => {
               try {
                 const response = await fetch(
