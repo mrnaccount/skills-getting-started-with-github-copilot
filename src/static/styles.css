@@ -89,16 +89,36 @@ section h3 {
 }
 
 .participants-section ul {
-  padding-left: 1.5rem;
+  list-style: none;
+  padding-left: 0;
 }
 
 .participants-section li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
   margin-bottom: 6px;
+}
+
+.participant-name {
   overflow-wrap: anywhere;
 }
 
 .participants-section li:last-child {
   margin-bottom: 0;
+}
+
+.unregister-button {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  color: #c62828;
+  background: transparent;
+  font-size: 16px;
+}
+
+.unregister-button:hover {
+  background-color: #ffebee;
 }
 
 .empty-participants {
